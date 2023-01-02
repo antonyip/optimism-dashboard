@@ -45,6 +45,11 @@ export default function RootPage() {
             </NavLink>
           </Row>
           <Row className="items-stretch py-2">
+            <NavLink className="flex items-center flex-row" to={"/NFT"}>
+              <i className="fa fa-images"></i><p className="px-2">NFT</p>
+            </NavLink>
+          </Row>
+          <Row className="items-stretch py-2">
             <NavLink className="flex items-center flex-row" to={"/Fees"}>
               <i className="fa fa-table"></i><p className="px-2">Fees</p>
             </NavLink>

@@ -14,7 +14,7 @@ function sendJSONFile(jsonData, jsonFilename) {
 
 function JSONButton({jsonData, jsonFilename}) {
     return (
-        <Button color="info" onClick={() => {sendJSONFile(jsonData, jsonFilename)}}>
+        <Button className="text-xs" color="info" onClick={() => {sendJSONFile(jsonData, jsonFilename)}}>
             JSON
         </Button>
   );

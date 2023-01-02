@@ -41,10 +41,10 @@ const template = (
 ) => {
   return (
     <Container className="bg-red-100 rounded-4 p-4">
-      <Row>
-        <Col xs="4">{needSpinner ? <Spinner /> : <></>}</Col>
-        <Col>{chartTitle}</Col>
-        <Col xs="4">
+      <Row className="flex">
+        <Col className="flex basis-1/2 text-left h4">{chartTitle}</Col>
+        <Col className="flex justify-start">{needSpinner ? <Spinner /> : <></>}</Col>
+        <Col className="flex justify-end">
           <SQLButton sqlQuery={chartQuery}></SQLButton>
           <JSONButton
             jsonData={chartJsonData || { error: "Chart Not Loaded Yet..." }}

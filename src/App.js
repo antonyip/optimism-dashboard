@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage'
 import RootPage from './pages/RootPage'
 import Index from './pages/Index'
 import Fees from './pages/Fees'
+import NFT from './pages/NFT'
 import Blockchain from './pages/Blockchain'
 import Speed from './pages/Speed'
 import Users from './pages/Users'
@@ -36,6 +37,10 @@ function App() {
         {
           path: 'Users/',
           element: <Users />,
+        },
+        {
+          path: 'NFT/',
+          element: <NFT />,
         },
         {
           path: 'Fees/',

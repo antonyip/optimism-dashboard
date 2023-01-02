@@ -22,7 +22,7 @@ function SQLButton({ sqlQuery }) {
 
   return (
     <>
-      <Button color="info" className='small' onClick={handleClickOpen}>
+      <Button color="info" className="text-xs" onClick={handleClickOpen}>
         SQL
       </Button>
       <Modal
