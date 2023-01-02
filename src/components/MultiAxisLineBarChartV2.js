@@ -68,7 +68,7 @@ export default function MultiAxisLineBarChartV2({
     return template(<EmptyChart />, chartTitle, chartQuery, null, true);
   }
 
-  console.log(chartDataLoad);
+  //console.log(chartDataLoad);
 
   // extract the data into arrays
   const chartXAxisData = [];

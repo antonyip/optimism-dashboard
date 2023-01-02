@@ -14,7 +14,7 @@ function SmallCard({ title, text, link }) {
   const _blank = useRef("_blank")
   const _noref = useRef("noreferral")
   return (
-    <Card>
+    <Card className="bg-red-100">
       <CardBody>
         <CardTitle className="h3">{title}</CardTitle>
       </CardBody>

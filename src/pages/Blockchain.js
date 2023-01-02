@@ -1,10 +1,11 @@
-import { myQuery as GetBlocksWeeklyQuery } from "../api/GetBlocksWeeklyQuery";
-import { myQuery as GetTransactionsWeeklyQuery } from "../api/GetTransactionsWeeklyQuery";
-import { myQuery as GetWeeklyActiveSenderQuery } from "../api/GetWeeklyActiveSenderQuery";
-import { myQuery as GetWeeklyNewSenderQuery } from "../api/GetWeeklyNewSenderQuery";
 import { Row, Col, Container, Card } from "reactstrap";
 import GenerateChart from "../components/GenerateChart";
 import { CHARTCOLORS } from "../constants/ChartColors";
+
+import { myQuery as GetBlocksWeeklyQuery } from "../api/GetBlocksWeeklyQuery";
+import { myQuery as GetTransactionsWeeklyQuery } from "../api/GetTransactionsWeeklyQuery";
+import { myQuery as GetProtocolSuccessRateQuery } from "../api/GetProtocolSuccessRateQuery";
+import { myQuery as GetDelegationsQuery } from "../api/GetDelegationsQuery";
 
 export default function Blockchain() {
   return (
@@ -37,19 +38,20 @@ export default function Blockchain() {
       <Row className="pb-2">
         <Col className="rounded" xs={12} md={6}>
           <GenerateChart
-            chartQuery={GetWeeklyActiveSenderQuery}
-            chartType="TimeBarChart"
-            chartTitle="Active Senders Per Week"
-            //chartYAxisLabel={["Active Senders Per Week"]}
-            chartBackgroundColors={[CHARTCOLORS.COLOR1]}
+            chartQuery={GetProtocolSuccessRateQuery}
+            chartType="LineBarChart"
+            chartTitle="Transaction Success Rate"
+            chartFlipYData={true}
+            chartYAxisLabel={["Average Success Rate", "Weekly Success Rate"]}
+            chartBackgroundColors={[CHARTCOLORS.BLACK, CHARTCOLORS.COLOR1]}
           ></GenerateChart>
         </Col>
         <Col className="rounded" xs={12} md={6}>
           <GenerateChart
-            chartQuery={GetWeeklyNewSenderQuery}
+            chartQuery={GetDelegationsQuery}
             chartType="TimeBarChart"
-            chartTitle="New Wallets Per Week"
-            //chartYAxisLabel={["New Wallets Per Week"]}
+            chartTitle="Delegations Per Week"
+            //chartYAxisLabel={["Transactions Per Week"]}
             chartBackgroundColors={[CHARTCOLORS.COLOR1]}
           ></GenerateChart>
         </Col>

@@ -24,7 +24,7 @@ export default function Index() {
             chartSource="https://api.coingecko.com/api/v3/coins/optimism?tickers=true&market_data=true&sparkline=true"
             chartDataTransformer={TransformCoinGeckoPrice}
             chartTitle={"Op Price"}
-            chartPreValueText={"$"}
+            chartPreValueText={"$ "}
             chartToDisplaySource={true}
           ></GenerateSingleDigitDisplay>
         </Col>
@@ -40,7 +40,7 @@ export default function Index() {
             chartAxiosGetter="POST"
             chartDataTransformer={TransformLatestBlock}
             chartTitle={"Op Latest Block"}
-            chartPreValueText={""}
+            chartPreValueText={"Block "}
             chartToDisplaySource={true}
           ></GenerateSingleDigitDisplay>
         </Col>

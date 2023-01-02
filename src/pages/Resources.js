@@ -10,11 +10,11 @@ import {
   Col,
 } from "reactstrap";
 
-function SmallCard({ title, text, link, img }) {
+function SmallCard({ title, text, link, img, shortname }) {
   const _blank = useRef("_blank");
   const _noref = useRef("noreferral");
   return (
-    <Card>
+    <Card className="bg-red-100">
       <CardBody>
         <CardTitle className="h3">{title}</CardTitle>
       </CardBody>
@@ -30,7 +30,7 @@ function SmallCard({ title, text, link, img }) {
             target={_blank}
             ref={_noref}
           >
-            {link}
+            {shortname || link}
           </CardLink>
         </CardText>
       </CardBody>
@@ -72,15 +72,59 @@ export default function Resources() {
           ></SmallCard>
         </Col>
       </Row>
-      <Row>
+      <Row className="pb-2">
         <Col>
           <SmallCard
-            title={"MetricsDAO"}
-            text={"Bounty Provider"}
-            link={"https://metricsdao.xyz"}
+            title={"Sushi vs Velodrome"}
+            text={"by jackguy"}
+            shortname={"Dashboard"}
+            link={"https://app.flipsidecrypto.com/dashboard/sushiswap-vs-velodrome-gludfi"}
+          ></SmallCard>
+        </Col>
+        <Col>
+          <SmallCard
+            title={"Overtime Markets"}
+            text={"by CryptoIcicle"}
+            shortname={"Dashboard"}
+            link={"https://app.flipsidecrypto.com/dashboard/VTZBi8"}
+          ></SmallCard>
+        </Col>
+        <Col>
+          <SmallCard
+            title={"OPtimitic or Pessimistic?"}
+            text={"by Moe"}
+            shortname={"Dashboard"}
+            link={"https://app.flipsidecrypto.com/dashboard/untitled-board-Kj30DH"}
           ></SmallCard>
         </Col>
       </Row>
+      <Row className="pb-2">
+        <Col>
+          <SmallCard
+            title={"OP Megadash "}
+            text={"by sina"}
+            link={"https://opmega.vercel.app"}
+          ></SmallCard>
+        </Col>
+        {/* <Col>
+          <SmallCard
+            title={"Overtime Markets"}
+            text={"by CryptoIcicle"}
+            shortname={"Dashboard"}
+            link={"https://app.flipsidecrypto.com/dashboard/VTZBi8"}
+          ></SmallCard>
+        </Col>
+        <Col>
+          <SmallCard
+            title={"OPtimitic or Pessimistic?"}
+            text={"by Moe"}
+            shortname={"Dashboard"}
+            link={"https://app.flipsidecrypto.com/dashboard/untitled-board-Kj30DH"}
+          ></SmallCard>
+        </Col> */}
+      </Row>
+
+      
     </Container>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import TimeBarChartV2 from "./TimeBarChartV2";
 import LineBarChartV2 from "./LineBarChartV2";
 import MultiAxisLineBarChartV2 from "./MultiAxisLineBarChartV2";
-
+import PieChartV2 from "./PieChartV2"
 
 export default function GenerateChart({
   chartQuery,
@@ -42,6 +42,9 @@ export default function GenerateChart({
   }
   if (chartType === 'MultiAxisLineBarChart'){
     return MultiAxisLineBarChartV2(chartDetails);
+  }
+  if (chartType === 'PieChart'){
+    return PieChartV2(chartDetails);
   }
 
 

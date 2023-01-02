@@ -1,4 +1,4 @@
-import { myQuery as GetBlocksWeeklyQuery } from "../api/GetBlocksWeeklyQuery";
+import { myQuery as GetWeeklyProtocolFeesQuery } from "../api/GetWeeklyProtocolFeesQuery";
 import { myQuery as GetTransactionsWeeklyQuery } from "../api/GetTransactionsWeeklyQuery";
 import { Row, Col, Container, Card } from "reactstrap";
 import GenerateChart from "../components/GenerateChart";
@@ -15,11 +15,11 @@ export default function Fees() {
       <Row>
         <Col xs={12} md={6}>
           <GenerateChart
-            chartQuery={GetBlocksWeeklyQuery}
-            chartType="TimeBarChart"
-            chartTitle="Blocks Per Week"
-            //chartYAxisLabel=[""]
-            chartBackgroundColors={[CHARTCOLORS.COLOR1]}
+            chartQuery={GetWeeklyProtocolFeesQuery}
+            chartType="MultiAxisLineBarChart"
+            chartTitle="Weekly Protocol Earnings"
+            chartYAxisLabel={["Weekly Earnings (ETH)", "Average Tx Fee in GWEI"]}
+            chartBackgroundColors={[CHARTCOLORS.BLACK, CHARTCOLORS.COLOR1]}
           ></GenerateChart>
         </Col>
         <Col xs={12} md={6}>
