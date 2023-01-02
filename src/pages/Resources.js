@@ -1,45 +1,86 @@
+import { useRef } from "react";
 import {
   Card,
   CardTitle,
-  CardSubtitle,
   CardBody,
   CardLink,
   CardText,
+  Container,
+  Row,
+  Col,
 } from "reactstrap";
-export default function Resources() {
+
+function SmallCard({ title, text, link, img }) {
+  const _blank = useRef("_blank");
+  const _noref = useRef("noreferral");
   return (
-    <Card
-      style={{
-        width: "24rem",
-      }}
-    >
+    <Card>
       <CardBody>
-        <CardTitle className="h1">About Me!</CardTitle>
-        <CardSubtitle className="mb-2 text-muted" tag="h2">
-          Hi! I'm Anton. Just a programmer looking for fun things to do!
-        </CardSubtitle>
+        <CardTitle className="h3">{title}</CardTitle>
       </CardBody>
-      <CardBody>
-        <CardText className="p-2">You can find the sources of this project at... </CardText>
+      <CardBody className="">
         <CardText className="p-2">
-          <CardLink className="text-blue-600 rounded border-black border-2 p-2" href="https://github.com/antonyip/bsc-dashboard">
-            Link to Github
+          <img className="justify-self-center" alt="" src={img} />
+        </CardText>
+        <CardText className="p-2">{text}</CardText>
+        <CardText className="p-2">
+          <CardLink
+            className="text-blue-600 rounded border-black border-2 p-2"
+            href={link}
+            target={_blank}
+            ref={_noref}
+          >
+            {link}
           </CardLink>
         </CardText>
-        <br></br>
-        <CardText className="p-2">
-          Visit the organizations that motivated me to build this site!{" "}
-        </CardText>
-        <CardText className="p-2">
-          <CardLink className="text-blue-600 rounded border-black border-2 p-2" href="https://flipsidecrypto.xyz">FlipsideCrypto</CardLink>{" "}
-        </CardText>
-        <CardText className="p-2">
-          <CardLink className="text-blue-600 rounded border-black border-2 p-2" href="https://metricsdao.xyz">MetricsDAO</CardLink>
-        </CardText>
-        <br></br>
-        <CardLink className="text-blue-600 rounded border-black border-2 p-2" href="http://www.antonyip.com">www.antonyip.com</CardLink>
-        <CardLink className="text-blue-600 rounded border-black border-2 p-2" href="https://twitter.com/msgAnton">@msgAnton</CardLink>
       </CardBody>
     </Card>
+  );
+}
+
+export default function Resources() {
+  return (
+    <Container className="pb-1">
+      <Row className="pb-2">
+        <Card className="bg-red-900 text-white">
+          <Col className="h1 text-white">Resources</Col>
+        </Card>
+      </Row>
+      <Row className="pb-2">
+        <Col>
+          <SmallCard
+            title={"Optimism"}
+            text={"Main Page"}
+            img={"./img/optimism-ethereum-op-logo.png"}
+            link={"https://www.optimism.io"}
+          ></SmallCard>
+        </Col>
+        <Col>
+          <SmallCard
+            title={"DefilLama"}
+            text={"The place to look for TVL"}
+            img={"https://cdn.publish0x.com/prod/fs/images/300e36ef13a257666b031d5da7012b565a0a1c55033becbdbf690ebcf21eb121.png"}
+            link={"https://defillama.com/chain/Optimism"}
+          ></SmallCard>
+        </Col>
+        <Col>
+          <SmallCard
+            title={"Etherscan - Optimism"}
+            text={"Etherscan for Optimism"}
+            img="https://etherscan.io/images/brandassets/etherscan-logo-circle.png"
+            link={"https://optimistic.etherscan.io"}
+          ></SmallCard>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <SmallCard
+            title={"MetricsDAO"}
+            text={"Bounty Provider"}
+            link={"https://metricsdao.xyz"}
+          ></SmallCard>
+        </Col>
+      </Row>
+    </Container>
   );
 }

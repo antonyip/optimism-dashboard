@@ -1,25 +1,48 @@
-import { Info } from "@mui/icons-material";
-import {
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import { useState } from "react";
+import { Button, Tooltip } from "reactstrap";
 
-function SRCButton({ srcLink }) {
+function SRCButton({ srcLink, className, args }) {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+  const toggle = () => setTooltipOpen(!tooltipOpen);
+  const [idd] = useState(Math.round(Math.random()*1000000000).toString())
+
   return (
-    <Tooltip title={srcLink || "undefined"}>
-      <IconButton
-        color="secondary"
-        aria-label="add an alarm"
-        onClick={() => {
-          if (srcLink) {
-            window.open(srcLink, "_blank");
-          }
-        }}
+    
+    <>
+    <Button
+      className={"rounded-full " + className}
+      onClick={() => {
+        if (srcLink) {
+          window.open(srcLink, "_blank");
+        }
+      }}
+      id={"srcLink" + idd}
+    >
+      <i className="fa fa-info-circle hover">
+      </i>
+    </Button>
+    <Tooltip
+        {...args}
+        isOpen={tooltipOpen}
+        target={"srcLink" + idd}
+        toggle={toggle}
       >
-        <Info sx={{ color: "#999" }}></Info>
-      </IconButton>
-    </Tooltip>
+        {srcLink}
+      </Tooltip>
+    </>
   );
 }
+
+SRCButton.args = {
+  autohide: true,
+  flip: true,
+};
+
+SRCButton.argTypes = {
+  placement: {
+    control: { type: 'select' },
+    options: ['top', 'left', 'right', 'bottom'],
+  },
+};
 
 export default SRCButton;

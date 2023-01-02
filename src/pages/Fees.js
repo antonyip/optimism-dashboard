@@ -9,7 +9,7 @@ export default function Fees() {
     <Container>
       <Row className="pb-2">
         <Card className="bg-red-900 text-white">
-          <Col className="h1 text-white">Fees</Col>
+          <Col className="h1 text-white">Protocol Fees</Col>
         </Card>
       </Row>
       <Row>

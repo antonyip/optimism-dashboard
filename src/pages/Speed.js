@@ -31,7 +31,7 @@ export default function Speed() {
               "Total Fees Paid Per Week",
               "Average Fees Paid Per Tx",
             ]}
-            chartBackgroundColors={[CHARTCOLORS.COLOR1, CHARTCOLORS.COLOR4]}
+            chartBackgroundColors={[CHARTCOLORS.BLACK, CHARTCOLORS.COLOR1]}
           ></GenerateChart>
         </Col>
       </Row>

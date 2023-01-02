@@ -26,7 +26,7 @@ export default function RootPage() {
           {/* Sidebar Items */}
           <Row className="items-stretch py-2">
             <NavLink className="flex items-center flex-row" to={"/"}>
-              <i class="fa fa-money-check"></i><p className="px-2">Summary</p>
+              <i className="fa fa-money-check"></i><p className="px-2">Summary</p>
             </NavLink>
           </Row>
           <Row className="items-stretch py-2">
@@ -51,7 +51,7 @@ export default function RootPage() {
           </Row>
           <Row className="items-stretch py-2">
             <NavLink className="flex items-center flex-row" to={"/Fees"}>
-              <i className="fa fa-table"></i><p className="px-2">Fees</p>
+              <i className="fa fa-table"></i><p className="px-2">Protocol Fees</p>
             </NavLink>
           </Row>
           <Row className="items-stretch py-2">

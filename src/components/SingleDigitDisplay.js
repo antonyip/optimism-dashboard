@@ -1,6 +1,4 @@
-import { Card, CardContent, Typography } from "@mui/material";
-import { CHARTCOLORS } from "../Constants/Colors";
-import { Grid } from "@mui/material";
+import { Container, Card, Row, Col, Spinner } from "reactstrap";
 import SRCButton from "./SRCButton";
 
 function SingleDigitDisplay({
@@ -11,37 +9,23 @@ function SingleDigitDisplay({
   disableSource,
 }) {
   return (
-    <Card>
-      <CardContent>
-        <Grid container>
-          <Grid item xs={10}>
-            <Typography
-              sx={{ fontSize: 24 }}
-              color={CHARTCOLORS.PRIMARYLIGHT}
-              component="div"
-            >
-              {chartName}
-            </Typography>
-          </Grid>
-          <Grid container item xs={2} justifyContent="flex-end">
+    <Card className="bg-red-100 py-2 pb-2">
+      <Container>
+        <Row className="flex">
+          <Col className="flex justify-left h4">{chartName}{' '}{!chartValue ? <Spinner></Spinner> : <></>}</Col>
+          
+          <Col className="flex justify-right justify-end">
             {disableSource ? (
               <></>
             ) : (
-              <SRCButton srcLink={chartSource}></SRCButton>
+              <SRCButton className="bg-black text-white" srcLink={chartSource}></SRCButton>
             )}
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            sx={{ fontSize: 24 }}
-            color={CHARTCOLORS.SECONDARY}
-            component="div"
-          >
-            {chartPreValueText}
-            {chartValue}
-          </Typography>
-        </Grid>
-      </CardContent>
+          </Col>
+        </Row>
+        <Row className="h5">
+          <Col className="flex justify-start">{chartPreValueText}{chartValue}</Col>
+        </Row>
+      </Container>
     </Card>
   );
 }
