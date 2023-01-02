@@ -25,7 +25,7 @@ export default function GenerateSingleDigitDisplay({
       })
     }
     
-  }, [chartSource, chartDataTransformer]);
+  }, [chartSource, chartDataTransformer, chartAxiosGetter, chartSourceParams]);
 
   return (
     <SingleDigitDisplay

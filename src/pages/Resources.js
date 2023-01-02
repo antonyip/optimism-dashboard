@@ -12,7 +12,6 @@ import {
 
 function SmallCard({ title, text, link, img, shortname }) {
   const _blank = useRef("_blank");
-  const _noref = useRef("noreferral");
   return (
     <Card className="bg-red-100">
       <CardBody>
@@ -28,7 +27,6 @@ function SmallCard({ title, text, link, img, shortname }) {
             className="text-blue-600 rounded border-black border-2 p-2"
             href={link}
             target={_blank}
-            ref={_noref}
           >
             {shortname || link}
           </CardLink>
